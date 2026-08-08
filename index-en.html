@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PhiJo — One quote a day, a quiet journal</title>
-  <meta name="description" content="PhiJo: daily philosophical and motivational quotes, minimalist journaling. Ad-free, no tracking. For iOS and Android.">
+  <meta name="description" content="PhiJo: daily philosophical and motivational quotes, minimalist journaling. Ad-free, no tracking. For iPhone.">
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,10 +36,10 @@
     <div class="featured-inner reveal reveal-blur">
       <div class="quote-card" id="quoteCard">
         <p class="quote-text" id="quoteText">
-          “What we do now echoes in eternity.”
+          “It is not that we have a short time to live, but that we waste much of it.”
         </p>
         <p class="quote-attr" id="quoteAttr">
-          — Marcus Aurelius
+          — Seneca · De Brevitate Vitae
         </p>
       </div>
       <div class="quote-dots" id="quoteDots" role="tablist"></div>
@@ -124,17 +124,17 @@
 
   <section class="download">
     <div class="container narrow">
-      <h2 class="section-title reveal">Coming soon</h2>
+      <h2 class="section-title reveal">Download</h2>
       <p class="section-sub reveal" style="--i: 1">
-        PhiJo is being prepared for release on iOS and Android.
+        PhiJo is free on iPhone. The Android version is on the way.
       </p>
       <div class="badges reveal" style="--i: 2">
-        <div class="badge badge-disabled" aria-label="App Store — coming soon">
+        <a class="badge" href="https://apps.apple.com/app/id6774734669" aria-label="Download PhiJo on the App Store">
           <span class="badge-prefix">Download on the</span>
           <span class="badge-store">App Store</span>
-        </div>
+        </a>
         <div class="badge badge-disabled" aria-label="Google Play — coming soon">
-          <span class="badge-prefix">Get it on</span>
+          <span class="badge-prefix">Coming soon</span>
           <span class="badge-store">Google Play</span>
         </div>
       </div>
@@ -179,9 +179,9 @@
     // Rotating featured quote
     (function () {
       var quotes = [
-        { text: '“What we do now echoes in eternity.”', attr: '— Marcus Aurelius' },
-        { text: '“A journey of a thousand miles begins with a single step.”', attr: '— Lao Tzu' },
-        { text: '“It is not the length of life, but the depth.”', attr: '— Seneca' },
+        { text: '“It is not that we have a short time to live, but that we waste much of it.”', attr: '— Seneca · De Brevitate Vitae' },
+        { text: '“A man\'s character is his fate.”', attr: '— Heraclitus · Fr. DK B119' },
+        { text: '“Of all the things wisdom provides for a happy life, the greatest is friendship.”', attr: '— Epicurus · Vatican Sayings' },
         { text: '“The wound is the place where the Light enters you.”', attr: '— Rumi' }
       ];
       var idx = 0;

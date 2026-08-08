@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PhiJo — Her gün bir söz, sessiz bir günlük</title>
-  <meta name="description" content="PhiJo: günlük felsefi ve motive edici sözler, minimalist günlük tutma. Reklamsız, takipsiz. iOS ve Android için.">
+  <meta name="description" content="PhiJo: günlük felsefi ve motive edici sözler, minimalist günlük tutma. Reklamsız, takipsiz. iPhone için.">
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,10 +38,10 @@
     <div class="featured-inner reveal reveal-blur">
       <div class="quote-card" id="quoteCard">
         <p class="quote-text" id="quoteText">
-          “Şimdi yaptığımız, sonsuzlukta yankılanır.”
+          “Sorun, yaşamak için az vaktimizin olması değil; çoğunu boşa harcamamızdır.”
         </p>
         <p class="quote-attr" id="quoteAttr">
-          — Marcus Aurelius
+          — Seneca · De Brevitate Vitae
         </p>
       </div>
       <div class="quote-dots" id="quoteDots" role="tablist"></div>
@@ -129,17 +129,17 @@
   <!-- DOWNLOAD -->
   <section class="download">
     <div class="container narrow">
-      <h2 class="section-title reveal">Yakında</h2>
+      <h2 class="section-title reveal">İndir</h2>
       <p class="section-sub reveal" style="--i: 1">
-        PhiJo iOS ve Android için yayına hazırlanıyor.
+        PhiJo iPhone'da ücretsiz. Android sürümü hazırlanıyor.
       </p>
       <div class="badges reveal" style="--i: 2">
-        <div class="badge badge-disabled" aria-label="App Store — yakında">
+        <a class="badge" href="https://apps.apple.com/tr/app/id6774734669" aria-label="PhiJo'yu App Store'dan indir">
           <span class="badge-prefix">İndir</span>
           <span class="badge-store">App Store</span>
-        </div>
+        </a>
         <div class="badge badge-disabled" aria-label="Google Play — yakında">
-          <span class="badge-prefix">İndir</span>
+          <span class="badge-prefix">Yakında</span>
           <span class="badge-store">Google Play</span>
         </div>
       </div>
@@ -185,10 +185,10 @@
     // Rotating featured quote
     (function () {
       var quotes = [
-        { text: '“Şimdi yaptığımız, sonsuzlukta yankılanır.”', attr: '— Marcus Aurelius' },
-        { text: '“Bin millik bir yolculuk tek bir adımla başlar.”', attr: '— Lao Tzu' },
-        { text: '“Önemli olan yaşamın uzunluğu değil, derinliğidir.”', attr: '— Seneca' },
-        { text: '“Yara, ışığın sana girdiği yerdir.”', attr: '— Mevlana' }
+        { text: '“Sorun, yaşamak için az vaktimizin olması değil; çoğunu boşa harcamamızdır.”', attr: '— Seneca · De Brevitate Vitae' },
+        { text: '“Karakter, insanın kaderidir.”', attr: '— Herakleitos · Fr. DK B119' },
+        { text: '“Bilgeliğin mutlu bir yaşam için sunduğu armağanlar içinde en büyüğü dostluktur.”', attr: '— Epikuros · Vatikan Özdeyişleri' },
+        { text: '“Yara, ışığın sana girdiği yerdir.”', attr: '— Mevlânâ' }
       ];
       var idx = 0;
       var textEl = document.getElementById('quoteText');
