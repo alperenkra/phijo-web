@@ -2,226 +2,257 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PhiJo — Her gün bir söz, sessiz bir günlük</title>
-  <meta name="description" content="PhiJo: günlük felsefi ve motive edici sözler, minimalist günlük tutma. Reklamsız, takipsiz. iPhone için.">
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PhiJo: Her gün bir söz</title>
+  <meta name="description" content="PhiJo her gün tek bir söz gösteren ücretsiz bir iPhone uygulaması. Seneca'dan Yunus Emre'ye 49 yazar, kaynaklarıyla. Ana ekran widget'ı ve günlük de içinde.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#F5EFE3" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1A1715" media="(prefers-color-scheme: dark)">
+  <meta name="apple-itunes-app" content="app-id=6774734669">
+  <link rel="canonical" href="https://alperenkra.github.io/phijo-web/">
+  <link rel="alternate" hreflang="tr" href="https://alperenkra.github.io/phijo-web/">
+  <link rel="alternate" hreflang="en" href="https://alperenkra.github.io/phijo-web/index-en.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="PhiJo: Her gün bir söz">
+  <meta property="og:description" content="Her gün tek bir söz gösteren ücretsiz iPhone uygulaması. Kaynaklarıyla, ana ekran widget'ıyla.">
+  <meta property="og:url" content="https://alperenkra.github.io/phijo-web/">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:image" content="https://alperenkra.github.io/phijo-web/assets/og-tr.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="home.css">
+  <script>document.documentElement.classList.add('js');</script>
 </head>
-<body class="home">
-  <nav class="lang-switch">
-    <a href="index.html" class="active">TR</a>
-    <a href="index-en.html">EN</a>
-  </nav>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-inner">
-      <h1 class="brand brand-xl">P H İ J O</h1>
-      <p class="hero-tagline">
-        Her gün bir söz.<br>
-        <span class="muted-italic">Sessiz bir günlük.</span>
-      </p>
-      <div class="hero-divider" aria-hidden="true">·&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;·</div>
-      <p class="hero-sub">
-        Felsefi ve motive edici sözler.<br>
-        Reklamsız. Takipsiz. Yapay zekasız.
-      </p>
+<body>
+  <header class="top">
+    <a class="corner corner-left" href="#indir" aria-label="İndir"><span>İn</span><span>dir</span></a>
+    <div class="masthead">
+      <h1 class="brand" aria-label="PhiJo">PHIJO</h1>
+      <p class="date" id="date"></p>
     </div>
-    <div class="scroll-hint" aria-hidden="true">↓</div>
-  </section>
+    <a class="corner corner-right" href="index-en.html" hreflang="en" lang="en" aria-label="English"><span>Eng</span><span>lish</span></a>
+  </header>
 
-  <!-- FEATURED QUOTE (rotates) -->
-  <section class="featured">
-    <div class="featured-inner reveal reveal-blur">
-      <div class="quote-card" id="quoteCard">
-        <p class="quote-text" id="quoteText">
-          “Sorun, yaşamak için az vaktimizin olması değil; çoğunu boşa harcamamızdır.”
-        </p>
-        <p class="quote-attr" id="quoteAttr">
-          — Seneca · De Brevitate Vitae
-        </p>
+  <main>
+    <section class="today">
+      <figure class="today-figure" id="todayFigure" data-state="pending">
+        <p class="today-label" id="todayLabel" data-live="Bugünün sözü">Bir söz</p>
+        <span class="mark" aria-hidden="true">”</span>
+        <blockquote class="today-quote is-long" id="todayQuote">Kışın derinliklerinde, içimde yenilmez bir yaz olduğunu nihayet öğrendim.</blockquote>
+        <figcaption>
+          <p class="today-cite"><span id="todayAuthor">Albert Camus</span><span class="today-source" id="todaySource">, Tipasa'ya Dönüş</span></p>
+          <div class="original" id="todayOriginal">
+            <p class="original-text" id="originalText" lang="fr">Au milieu de l'hiver, j'apprenais enfin qu'il y avait en moi un été invincible.</p>
+            <p class="original-lang" id="originalLang">Fransızca</p>
+          </div>
+        </figcaption>
+      </figure>
+      <div class="today-foot">
+        <p class="lede">PhiJo her gün tek bir söz gösteren ücretsiz bir iPhone uygulaması. Bugün açsan yukarıdaki sözü görürdün.</p>
+        <a class="badge" href="https://apps.apple.com/tr/app/id6774734669"><img src="assets/app-store-badge.svg" width="165" height="55" alt="App Store'dan indir"></a>
       </div>
-      <div class="quote-dots" id="quoteDots" role="tablist"></div>
-    </div>
-  </section>
+    </section>
 
-  <!-- WHAT IS IT -->
-  <section class="explainer">
-    <div class="container">
-      <h2 class="section-title reveal">Nedir?</h2>
-      <div class="feature-grid">
-        <div class="feature reveal" style="--i: 0">
-          <div class="feature-num">i.</div>
-          <h3 class="feature-title">Günde tek söz</h3>
-          <p>
-            Her gün küratörlenmiş bir söz. Sonsuz akış değil;
-            tek bir düşünceyle bir günü açmak.
-          </p>
+    <section class="block ochre" id="widget">
+      <div class="wrap block-grid">
+        <div class="block-text">
+          <h2 class="display">Widget</h2>
+          <p class="lead">Ana ekrana ve kilit ekranına eklenir. Söz, uygulamayı açmasan da her gün kendi kendine değişir. Serin de alt köşede görünür.</p>
+          <p class="lead">Widget'ta günün sözü yerine sana göre seçilen sözü gösterebilirsin. Premium'da kendi sözlerini de.</p>
         </div>
-        <div class="feature reveal" style="--i: 1">
-          <div class="feature-num">ii.</div>
-          <h3 class="feature-title">Sessiz bir günlük</h3>
-          <p>
-            Sözlere not yaz, yapışkan kâğıt gibi yapıştır.
-            Düşüncen söze bağlı kalır.
-          </p>
-        </div>
-        <div class="feature reveal" style="--i: 2">
-          <div class="feature-num">iii.</div>
-          <h3 class="feature-title">Sana göre</h3>
-          <p>
-            Onboarding'de yaptığın seçimler ve uygulama içindeki davranışlarınla
-            sana özel günlük öneri.
-          </p>
-        </div>
+        <img class="phone phone-widget" src="assets/phone-widget-tr.webp" width="891" height="1799" loading="lazy" alt="iPhone ana ekranında PhiJo widget'ı: Nietzsche'nin sözü ve 23 günlük seri.">
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- PHILOSOPHICAL TYPES -->
-  <section class="types">
-    <div class="container">
-      <h2 class="section-title reveal">8 felsefi tip</h2>
-      <p class="section-sub reveal" style="--i: 1">
-        7 turlu kısa bir testten sonra kendi felsefi türünü keşfedersin.
-        Öneriler tipine göre şekillenir.
-      </p>
-      <div class="types-grid">
-        <article class="type-card reveal" style="--i: 0">
-          <h3>Stoa Bilgesi</h3>
-          <p>Bilgeliği, erdemi ve sabrı önemseyen; dışsal şeylerin gücüne boyun eğmeyen tutum.</p>
-        </article>
-        <article class="type-card reveal" style="--i: 1">
-          <h3>Egzistansiyalist</h3>
-          <p>Hayatın anlamını, özgürlüğü ve yalnız var oluşunu sorgulayan derin bakış.</p>
-        </article>
-        <article class="type-card reveal" style="--i: 2">
-          <h3>Romantik</h3>
-          <p>Sevgi ve geçen zaman üzerine düşünen, kalbi her şeyin merkezinde tutan ruh.</p>
-        </article>
-        <article class="type-card reveal" style="--i: 3">
-          <h3>Cesur Ruh</h3>
-          <p>Cesareti ve özgürlüğü hayatın özü sayan, riski göze alan tavır.</p>
-        </article>
-        <article class="type-card reveal" style="--i: 4">
-          <h3>Tefekkürcü</h3>
-          <p>Yalnızlık, ölümlülük ve bilgelik üzerine sessizce düşünen; içsel huzur arayan.</p>
-        </article>
-        <article class="type-card reveal" style="--i: 5">
-          <h3>Mistik</h3>
-          <p>Sevgi, anlam ve bilgelik üzerinden evrensel bir bağlanmaya inanan.</p>
-        </article>
-        <article class="type-card reveal" style="--i: 6">
-          <h3>Pragmatist</h3>
-          <p>Sabrı, cesareti ve zamanı eyleme dönüştüren; yapıcı ve dirençli olan.</p>
-        </article>
-        <article class="type-card reveal" style="--i: 7">
-          <h3>Lirik Düşünür</h3>
-          <p>Sevgi, ölüm ve zamanın şiirsel dansını izleyen; hayatı estetik bir bütün olarak gören.</p>
-        </article>
+    <section class="block terracotta" id="akis">
+      <div class="wrap block-grid flip">
+        <div class="block-text">
+          <h2 class="display">Akış</h2>
+          <p class="lead">Günün sözünün altında sana göre seçilmiş bir söz, onun altında da sonu gelmeyen bir akış var. Neyi okuyup neyi geçtiğine göre sıralanır. Bir temaya ya da takip ettiğin yazarlara daraltabilirsin.</p>
+          <p class="fine">Ücretsiz sürümde günde 10 söz, Premium'da sınırsız.</p>
+        </div>
+        <img class="phone" src="assets/phone-feed-tr.webp" width="764" height="1619" loading="lazy" alt="Akış ekranı: Kant'ın sözü, Almanca aslıyla.">
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- DOWNLOAD -->
-  <section class="download">
-    <div class="container narrow">
-      <h2 class="section-title reveal">İndir</h2>
-      <p class="section-sub reveal" style="--i: 1">
-        PhiJo iPhone'da ücretsiz. Android sürümü hazırlanıyor.
-      </p>
-      <div class="badges reveal" style="--i: 2">
-        <a class="badge" href="https://apps.apple.com/tr/app/id6774734669" aria-label="PhiJo'yu App Store'dan indir">
-          <span class="badge-prefix">İndir</span>
-          <span class="badge-store">App Store</span>
-        </a>
-        <div class="badge badge-disabled" aria-label="Google Play — yakında">
-          <span class="badge-prefix">Yakında</span>
-          <span class="badge-store">Google Play</span>
+    <section class="block oxblood" id="seri">
+      <div class="wrap block-grid">
+        <div class="block-text">
+          <h2 class="display">Seri</h2>
+          <p class="lead">Uygulamayı açtığın günler takvimde işaretlenir, serin büyür. Bir gün kaçırırsan dondurma hakkın seriyi korur. Seri tablosunda başkalarıyla da kıyaslayabilirsin.</p>
+          <p class="streak-count" aria-hidden="true"><svg class="flame" viewBox="0 0 24 24"><path d="M12 1.8c3.5 4.4 7.2 7.9 7.2 12.6a7.2 7.2 0 0 1-14.4 0c0-4.7 3.7-8.2 7.2-12.6z"/><path class="flame-core" d="M12 12.4c1.5 1.9 3.1 3.1 3.1 5a3.1 3.1 0 0 1-6.2 0c0-1.9 1.6-3.1 3.1-5z"/></svg><span data-to="23">23</span></p>
+        </div>
+        <img class="phone phone-streak" src="assets/phone-streak-tr.webp" width="764" height="1619" loading="lazy" alt="Seri ekranı: 23 günlük seri ve Ekim takvimi.">
+      </div>
+    </section>
+
+    <section class="block sage" id="gunluk">
+      <div class="wrap block-grid flip">
+        <div class="block-text">
+          <h2 class="display">Günlük</h2>
+          <p class="lead">Bir söze not yazınca not, ana ekranda o sözün üstünde yapışkan kâğıt gibi durur. Basılı tutup istediğin yere çekebilirsin. O söz bir daha karşına çıktığında notun yine orada olur.</p>
+          <p class="lead">Bütün notlar Günlük'te tarih sırasıyla durur. İstersen Face ID ya da PIN ile kilitlenir.</p>
+        </div>
+        <div class="sheet" aria-hidden="true">
+          <p class="sheet-quote">Dans eden bir yıldız doğurmak için içinde kaos taşıman gerekir.</p>
+          <p class="sheet-author">Friedrich Nietzsche</p>
+          <div class="sticky">İçimdeki kaosu bir hata değil, bir başlangıç olarak görmeyi öğreniyorum.<span class="sticky-date">31 Mayıs</span></div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-brand">P H İ J O</div>
-      <nav class="footer-nav">
-        <a href="privacy.html">Gizlilik Politikası</a>
+    <section class="block plum" id="tipler">
+      <div class="wrap types-grid">
+        <div>
+          <h2 class="display">Sekiz tip</h2>
+          <p class="lead">İlk açılışta sekiz soru soruluyor, sonunda sekiz felsefi tipten birine yerleşiyorsun. Sana göre sözler buradan başlıyor, sonra beğendiklerine göre değişiyor.</p>
+          <div class="glyphs" role="group" aria-label="Felsefi tipler">
+            <button class="glyph" type="button" aria-pressed="true" aria-label="Stoa Bilgesi" data-name="Stoa Bilgesi" data-desc="Bilgeliği, erdemi ve sabrı önemseyen; dışsal şeylerin gücüne boyun eğmeyen tutum.">❂&#xFE0E;</button>
+            <button class="glyph" type="button" aria-pressed="false" aria-label="Egzistansiyalist" data-name="Egzistansiyalist" data-desc="Hayatın anlamını, özgürlüğü ve yalnız var oluşunu sorgulayan derin bakış.">◌&#xFE0E;</button>
+            <button class="glyph" type="button" aria-pressed="false" aria-label="Romantik" data-name="Romantik" data-desc="Sevgi ve geçen zaman üzerine düşünen, kalbi her şeyin merkezinde tutan ruh.">❦&#xFE0E;</button>
+            <button class="glyph" type="button" aria-pressed="false" aria-label="Cesur Ruh" data-name="Cesur Ruh" data-desc="Cesareti ve özgürlüğü hayatın özü sayan, riski göze alan tavır.">▲&#xFE0E;</button>
+            <button class="glyph" type="button" aria-pressed="false" aria-label="Tefekkürcü" data-name="Tefekkürcü" data-desc="Yalnızlık, ölümlülük ve bilgelik üzerine sessizce düşünen; içsel huzur arayan.">☽&#xFE0E;</button>
+            <button class="glyph" type="button" aria-pressed="false" aria-label="Mistik" data-name="Mistik" data-desc="Sevgi, anlam ve bilgelik üzerinden evrensel bir bağlanmaya inanan.">✶&#xFE0E;</button>
+            <button class="glyph" type="button" aria-pressed="false" aria-label="Pragmatist" data-name="Pragmatist" data-desc="Sabrı, cesareti ve zamanı eyleme dönüştüren; yapıcı ve dirençli olan.">▣&#xFE0E;</button>
+            <button class="glyph" type="button" aria-pressed="false" aria-label="Lirik Düşünür" data-name="Lirik Düşünür" data-desc="Sevgi, ölüm ve zamanın şiirsel dansını izleyen; hayatı estetik bir bütün olarak gören.">❧&#xFE0E;</button>
+          </div>
+          <div class="type-panel" id="typePanel">
+            <h3 class="type-name" id="typeName">Stoa Bilgesi</h3>
+            <p class="type-desc" id="typeDesc">Bilgeliği, erdemi ve sabrı önemseyen; dışsal şeylerin gücüne boyun eğmeyen tutum.</p>
+          </div>
+        </div>
+        <span class="type-big" id="typeBig" aria-hidden="true">❂&#xFE0E;</span>
+      </div>
+    </section>
+
+    <section class="block charcoal" id="kaynaklar">
+      <div class="wrap sources">
+        <h2 class="display">Sözün aslı</h2>
+        <p class="lead">Sözler elle seçiliyor. Kaynağı belirsiz, internette elden ele dolaşan alıntıları almamaya çalışıyoruz. Ekim 2026 itibarıyla 287 söz var; 226'sının yanında yazıldığı dildeki metni de duruyor.</p>
+        <ul class="spec">
+          <li>
+            <p class="spec-orig" lang="la">Non exiguum temporis habemus, sed multum perdidimus.</p>
+            <div class="spec-meta">
+              <p class="spec-trans">Sorun, yaşamak için az vaktimizin olması değil; çoğunu boşa harcamamızdır.</p>
+              <p class="spec-ref">Seneca, De Brevitate Vitae 1.3</p>
+            </div>
+          </li>
+          <li>
+            <p class="spec-orig" lang="el">Περιγράψας ἑαυτὸν τῷ παρόντι</p>
+            <div class="spec-meta">
+              <p class="spec-trans">Kendini şimdiki zamanla sınırla.</p>
+              <p class="spec-ref">Marcus Aurelius, Düşünceler VII.29</p>
+            </div>
+          </li>
+          <li>
+            <p class="spec-orig" lang="de">Habe Mut, dich deines eigenen Verstandes zu bedienen!</p>
+            <div class="spec-meta">
+              <p class="spec-trans">Kendi aklını kullanma cesaretini göster!</p>
+              <p class="spec-ref">Immanuel Kant, Was ist Aufklärung? (1784)</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="wrap paper-section" id="yazarlar">
+      <h2 class="display">49 yazar</h2>
+      <ul class="authors"><li>Albert Camus</li> <li>Alfred Tennyson</li> <li>Aristoteles</li> <li>Arthur Schopenhauer</li> <li>Aziz Augustinus</li> <li>Blaise Pascal</li> <li>Carl Gustav Jung</li> <li>Cicero</li> <li>Dante Alighieri</li> <li>Emily Dickinson</li> <li>Epiktetos</li> <li>Epikuros</li> <li>Friedrich Nietzsche</li> <li>Fyodor Dostoyevski</li> <li>George Eliot</li> <li>Halil Cibran</li> <li>Henry David Thoreau</li> <li>Herakleitos</li> <li>Horatius</li> <li>Immanuel Kant</li> <li>Johann Wolfgang von Goethe</li> <li>Julius Caesar</li> <li>Konfüçyüs</li> <li>La Rochefoucauld</li> <li>Lev Tolstoy</li> <li>Marcus Aurelius</li> <li>Mevlânâ Celâleddîn-i Rûmî</li> <li>Michel de Montaigne</li> <li>Mustafa Kemal Atatürk</li> <li>Oscar Wilde</li> <li>Ovidius</li> <li>Platon</li> <li>Publilius Syrus</li> <li>Rabindranath Tagore</li> <li>Rainer Maria Rilke</li> <li>Ralph Waldo Emerson</li> <li>Sâdî-i Şîrâzî</li> <li>Seneca</li> <li>Sofokles</li> <li>Søren Kierkegaard</li> <li>Sun Tzu</li> <li>Vergilius</li> <li>Victor Hugo</li> <li>Viktor Frankl</li> <li>Voltaire</li> <li>Walt Whitman</li> <li>William Blake</li> <li>William Shakespeare</li> <li>Yunus Emre</li></ul>
+    </section>
+
+    <section class="wrap plans-section" id="fiyat">
+      <div class="plans">
+        <div class="plan">
+          <h3>Ücretsiz</h3>
+          <ul>
+            <li>Günün sözü</li>
+            <li>Sana göre günde 1 söz</li>
+            <li>Akışta günde 10 söz</li>
+            <li>Ana ekran ve kilit ekranı widget'ı</li>
+            <li>Seri ve seri tablosu</li>
+            <li>Günlük ve kilidi</li>
+            <li>Favoriler, yazar ve tema takibi</li>
+            <li>Son 3 günün sözleri</li>
+          </ul>
+        </div>
+        <div class="plan plan-premium">
+          <h3>Premium</h3>
+          <ul>
+            <li>Sınırsız akış</li>
+            <li>Sana göre günde 3 söz, derin profil analizi</li>
+            <li>Son 30 günün sözleri</li>
+            <li>Kendi sözlerin</li>
+            <li>Kişisel özet, günlüğü dışa aktarma</li>
+            <li>Bütün yazı tipleri ve boyutları</li>
+            <li>Widget stilleri ve kendi metnin</li>
+            <li>Paylaşım stilleri, uygulama simgeleri</li>
+            <li>Güne 3 bildirim saati</li>
+          </ul>
+        </div>
+      </div>
+      <p class="plans-note">Premium yıllık abonelik (7 gün ücretsiz deneme) ya da tek seferlik ömür boyu ödeme olarak alınır. İki sürümde de reklam yok.</p>
+    </section>
+
+    <section class="block slate" id="iletisim">
+      <div class="wrap contact-grid">
+        <div>
+          <h2 class="display">Bize yaz</h2>
+          <p class="lead">Hata, öneri ya da yanlış bulduğun bir atıf varsa doğrudan buraya yazabilirsin. PhiJo'yu Türkiye'den Alperen Kara yapıyor.</p>
+          <div class="contact-actions">
+            <a class="contact-btn contact-btn-primary" href="mailto:phijo.app@gmail.com?subject=PhiJo">Mail yaz</a>
+            <button class="contact-btn" type="button" id="copyMail" data-mail="phijo.app@gmail.com" data-done="Kopyalandı">Adresi kopyala</button>
+          </div>
+        </div>
+        <div class="envelope" id="envelope">
+          <div class="env-back"></div>
+          <div class="env-flap" aria-hidden="true">
+            <div class="env-flap-shape"></div>
+            <span class="env-seal">⁂</span>
+          </div>
+          <div class="letter">
+            <img class="stamp" src="assets/icon.webp" width="240" height="240" loading="lazy" alt="">
+            <p class="letter-hello">Merhaba PhiJo,</p>
+            <a class="letter-mail" href="mailto:phijo.app@gmail.com?subject=PhiJo">phijo.app@gmail.com</a>
+          </div>
+          <div class="env-front"></div>
+          <div class="env-bottom"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block teal" id="indir">
+      <div class="wrap closing">
+        <div class="icons" aria-hidden="true">
+          <img src="assets/icon.webp" width="240" height="240" loading="lazy" alt="">
+          <img src="assets/icon-dark.webp" width="240" height="240" loading="lazy" alt="">
+          <img src="assets/icon-sepia.webp" width="240" height="240" loading="lazy" alt="">
+          <img src="assets/icon-ink.webp" width="240" height="240" loading="lazy" alt="">
+        </div>
+        <h2 class="display">PhiJo'yu indir</h2>
+        <a class="badge" href="https://apps.apple.com/tr/app/id6774734669"><img src="assets/app-store-badge.svg" width="165" height="55" alt="App Store'dan indir"></a>
+        <p class="fine">iOS 15.1 ve üstü. Türkçe ve İngilizce. Hesap açmak gerekmiyor; notlarını başka cihaza taşımak istersen e-posta, Apple ya da Google ile bağlarsın. Android sürümü testte, Google Play'de henüz yok.</p>      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <nav class="foot-nav" aria-label="Site">
+        <a href="privacy.html">Gizlilik</a>
+        <a href="terms.html">Kullanım Koşulları</a>
         <a href="support.html">Destek</a>
-        <a href="index-en.html">English</a>
+        <a href="delete-account.html">Hesap Silme</a>
+        <a href="https://www.instagram.com/phijoapp/" rel="noopener">Instagram</a>
       </nav>
-      <p class="footer-meta">
-        Geliştirici: Alperen Kara · Türkiye<br>
-        İletişim: <span class="email">phijo.app@gmail.com</span>
-      </p>
-      <p class="footer-copy">&copy; 2026 PhiJo</p>
+      <p class="foot-copy">&copy; 2026 PhiJo</p>
     </div>
   </footer>
 
-  <script>
-    // Scroll reveal — IntersectionObserver
-    (function () {
-      var els = document.querySelectorAll('.reveal');
-      if (!('IntersectionObserver' in window)) {
-        els.forEach(function (el) { el.classList.add('in'); });
-        return;
-      }
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) {
-          if (e.isIntersecting) {
-            e.target.classList.add('in');
-            io.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
-      els.forEach(function (el) { io.observe(el); });
-    })();
-
-    // Rotating featured quote
-    (function () {
-      var quotes = [
-        { text: '“Sorun, yaşamak için az vaktimizin olması değil; çoğunu boşa harcamamızdır.”', attr: '— Seneca · De Brevitate Vitae' },
-        { text: '“Karakter, insanın kaderidir.”', attr: '— Herakleitos · Fr. DK B119' },
-        { text: '“Bilgeliğin mutlu bir yaşam için sunduğu armağanlar içinde en büyüğü dostluktur.”', attr: '— Epikuros · Vatikan Özdeyişleri' },
-        { text: '“Yara, ışığın sana girdiği yerdir.”', attr: '— Mevlânâ' }
-      ];
-      var idx = 0;
-      var textEl = document.getElementById('quoteText');
-      var attrEl = document.getElementById('quoteAttr');
-      var cardEl = document.getElementById('quoteCard');
-      var dotsEl = document.getElementById('quoteDots');
-      if (!textEl || !attrEl || !cardEl || !dotsEl) return;
-
-      function renderDots() {
-        dotsEl.innerHTML = '';
-        for (var i = 0; i < quotes.length; i++) {
-          var d = document.createElement('button');
-          d.className = 'quote-dot' + (i === idx ? ' active' : '');
-          d.setAttribute('role', 'tab');
-          d.setAttribute('aria-label', 'Söz ' + (i + 1));
-          (function (target) {
-            d.addEventListener('click', function () { show(target); });
-          })(i);
-          dotsEl.appendChild(d);
-        }
-      }
-      function show(i) {
-        idx = (i + quotes.length) % quotes.length;
-        cardEl.classList.remove('fade-in');
-        void cardEl.offsetWidth;
-        textEl.textContent = quotes[idx].text;
-        attrEl.textContent = quotes[idx].attr;
-        cardEl.classList.add('fade-in');
-        renderDots();
-      }
-      renderDots();
-      setInterval(function () { show(idx + 1); }, 6500);
-    })();
-  </script>
+  <script src="home.js" defer></script>
 </body>
 </html>

@@ -2,220 +2,257 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PhiJo — One quote a day, a quiet journal</title>
-  <meta name="description" content="PhiJo: daily philosophical and motivational quotes, minimalist journaling. Ad-free, no tracking. For iPhone.">
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PhiJo: One quote a day</title>
+  <meta name="description" content="PhiJo is a free iPhone app that shows one quote a day. 49 authors from Seneca to Emily Dickinson, with sources. Includes a home screen widget and a journal.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#F5EFE3" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1A1715" media="(prefers-color-scheme: dark)">
+  <meta name="apple-itunes-app" content="app-id=6774734669">
+  <link rel="canonical" href="https://alperenkra.github.io/phijo-web/index-en.html">
+  <link rel="alternate" hreflang="tr" href="https://alperenkra.github.io/phijo-web/">
+  <link rel="alternate" hreflang="en" href="https://alperenkra.github.io/phijo-web/index-en.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="PhiJo: One quote a day">
+  <meta property="og:description" content="A free iPhone app that shows one quote a day, with sources and a home screen widget.">
+  <meta property="og:url" content="https://alperenkra.github.io/phijo-web/index-en.html">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://alperenkra.github.io/phijo-web/assets/og-en.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="home.css">
+  <script>document.documentElement.classList.add('js');</script>
 </head>
-<body class="home">
-  <nav class="lang-switch">
-    <a href="index.html">TR</a>
-    <a href="index-en.html" class="active">EN</a>
-  </nav>
-
-  <section class="hero">
-    <div class="hero-inner">
-      <h1 class="brand brand-xl">P H İ J O</h1>
-      <p class="hero-tagline">
-        One quote a day.<br>
-        <span class="muted-italic">A quiet journal.</span>
-      </p>
-      <div class="hero-divider" aria-hidden="true">·&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;·</div>
-      <p class="hero-sub">
-        Philosophical and motivational quotes.<br>
-        No ads. No tracking. No AI.
-      </p>
+<body>
+  <header class="top">
+    <a class="corner corner-left" href="#download" aria-label="Download"><span>Down</span><span>load</span></a>
+    <div class="masthead">
+      <h1 class="brand" aria-label="PhiJo">PHIJO</h1>
+      <p class="date" id="date"></p>
     </div>
-    <div class="scroll-hint" aria-hidden="true">↓</div>
-  </section>
+    <a class="corner corner-right" href="index.html" hreflang="tr" lang="tr" aria-label="Türkçe"><span>Türk</span><span>çe</span></a>
+  </header>
 
-  <section class="featured">
-    <div class="featured-inner reveal reveal-blur">
-      <div class="quote-card" id="quoteCard">
-        <p class="quote-text" id="quoteText">
-          “It is not that we have a short time to live, but that we waste much of it.”
-        </p>
-        <p class="quote-attr" id="quoteAttr">
-          — Seneca · De Brevitate Vitae
-        </p>
+  <main>
+    <section class="today">
+      <figure class="today-figure" id="todayFigure" data-state="pending">
+        <p class="today-label" id="todayLabel" data-live="Today's quote">A quote</p>
+        <span class="mark" aria-hidden="true">”</span>
+        <blockquote class="today-quote is-long" id="todayQuote">In the depth of winter, I finally learned that within me there lay an invincible summer.</blockquote>
+        <figcaption>
+          <p class="today-cite"><span id="todayAuthor">Albert Camus</span><span class="today-source" id="todaySource">, Return to Tipasa</span></p>
+          <div class="original" id="todayOriginal">
+            <p class="original-text" id="originalText" lang="fr">Au milieu de l'hiver, j'apprenais enfin qu'il y avait en moi un été invincible.</p>
+            <p class="original-lang" id="originalLang">French</p>
+          </div>
+        </figcaption>
+      </figure>
+      <div class="today-foot">
+        <p class="lede">PhiJo is a free iPhone app that shows one quote a day. If you opened it today, you'd see the one above.</p>
+        <a class="badge" href="https://apps.apple.com/app/id6774734669"><img src="assets/app-store-badge.svg" width="165" height="55" alt="Download on the App Store"></a>
       </div>
-      <div class="quote-dots" id="quoteDots" role="tablist"></div>
-    </div>
-  </section>
+    </section>
 
-  <section class="explainer">
-    <div class="container">
-      <h2 class="section-title reveal">What is it?</h2>
-      <div class="feature-grid">
-        <div class="feature reveal" style="--i: 0">
-          <div class="feature-num">i.</div>
-          <h3 class="feature-title">One quote a day</h3>
-          <p>
-            A curated quote each day. No endless feed;
-            just a single thought to open the day with.
-          </p>
+    <section class="block ochre" id="widget">
+      <div class="wrap block-grid">
+        <div class="block-text">
+          <h2 class="display">Widget</h2>
+          <p class="lead">It goes on your home screen and lock screen. The quote changes on its own every day, even if you don't open the app. Your streak shows in the bottom corner.</p>
+          <p class="lead">You can show a quote picked for you instead of the daily one. With Premium, your own quotes too.</p>
         </div>
-        <div class="feature reveal" style="--i: 1">
-          <div class="feature-num">ii.</div>
-          <h3 class="feature-title">A quiet journal</h3>
-          <p>
-            Write notes on quotes, stick them like paper sticky notes.
-            Your thoughts stay anchored to the quote.
-          </p>
-        </div>
-        <div class="feature reveal" style="--i: 2">
-          <div class="feature-num">iii.</div>
-          <h3 class="feature-title">For you</h3>
-          <p>
-            Your onboarding choices and in-app behavior
-            shape a personal daily recommendation.
-          </p>
-        </div>
+        <img class="phone phone-widget" src="assets/phone-widget-en.webp" width="891" height="1799" loading="lazy" alt="The PhiJo widget on an iPhone home screen: a Nietzsche quote and a 23-day streak.">
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="types">
-    <div class="container">
-      <h2 class="section-title reveal">8 philosophical types</h2>
-      <p class="section-sub reveal" style="--i: 1">
-        A short 7-round quiz reveals your philosophical type.
-        Recommendations follow your type.
-      </p>
-      <div class="types-grid">
-        <article class="type-card reveal" style="--i: 0">
-          <h3>Stoic Sage</h3>
-          <p>Holds wisdom, virtue, and patience above the pull of external things.</p>
-        </article>
-        <article class="type-card reveal" style="--i: 1">
-          <h3>Existentialist</h3>
-          <p>Questions meaning, freedom, and the solitude of being human.</p>
-        </article>
-        <article class="type-card reveal" style="--i: 2">
-          <h3>Romantic</h3>
-          <p>Reflects on love and the passing of time; keeps the heart at the center.</p>
-        </article>
-        <article class="type-card reveal" style="--i: 3">
-          <h3>Brave Soul</h3>
-          <p>Sees courage and freedom as the essence of life; ready to take risk.</p>
-        </article>
-        <article class="type-card reveal" style="--i: 4">
-          <h3>Contemplative</h3>
-          <p>Quietly meditates on solitude, mortality, and wisdom; seeks inner stillness.</p>
-        </article>
-        <article class="type-card reveal" style="--i: 5">
-          <h3>Mystic</h3>
-          <p>Believes in a universal connection through love, meaning, and wisdom.</p>
-        </article>
-        <article class="type-card reveal" style="--i: 6">
-          <h3>Pragmatist</h3>
-          <p>Turns patience, courage, and time into action; constructive and resilient.</p>
-        </article>
-        <article class="type-card reveal" style="--i: 7">
-          <h3>Lyrical Thinker</h3>
-          <p>Watches the poetic dance of love, death, and time; sees life as an aesthetic whole.</p>
-        </article>
+    <section class="block terracotta" id="feed">
+      <div class="wrap block-grid flip">
+        <div class="block-text">
+          <h2 class="display">Feed</h2>
+          <p class="lead">Below today's quote there's one picked for you, and below that, a feed that keeps going. It's ordered by what you read and what you skip. Narrow it to a theme or to the authors you follow.</p>
+          <p class="fine">10 quotes a day on the free version, unlimited with Premium.</p>
+        </div>
+        <img class="phone" src="assets/phone-feed-en.webp" width="764" height="1619" loading="lazy" alt="Feed screen: a quote by Heraclitus.">
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="download">
-    <div class="container narrow">
-      <h2 class="section-title reveal">Download</h2>
-      <p class="section-sub reveal" style="--i: 1">
-        PhiJo is free on iPhone. The Android version is on the way.
-      </p>
-      <div class="badges reveal" style="--i: 2">
-        <a class="badge" href="https://apps.apple.com/app/id6774734669" aria-label="Download PhiJo on the App Store">
-          <span class="badge-prefix">Download on the</span>
-          <span class="badge-store">App Store</span>
-        </a>
-        <div class="badge badge-disabled" aria-label="Google Play — coming soon">
-          <span class="badge-prefix">Coming soon</span>
-          <span class="badge-store">Google Play</span>
+    <section class="block oxblood" id="streak">
+      <div class="wrap block-grid">
+        <div class="block-text">
+          <h2 class="display">Streak</h2>
+          <p class="lead">The days you open the app are marked on a calendar, and your streak grows. If you miss a day, a freeze protects it. The streak board lets you compare with others.</p>
+          <p class="streak-count" aria-hidden="true"><svg class="flame" viewBox="0 0 24 24"><path d="M12 1.8c3.5 4.4 7.2 7.9 7.2 12.6a7.2 7.2 0 0 1-14.4 0c0-4.7 3.7-8.2 7.2-12.6z"/><path class="flame-core" d="M12 12.4c1.5 1.9 3.1 3.1 3.1 5a3.1 3.1 0 0 1-6.2 0c0-1.9 1.6-3.1 3.1-5z"/></svg><span data-to="23">23</span></p>
+        </div>
+        <img class="phone phone-streak" src="assets/phone-streak-en.webp" width="764" height="1619" loading="lazy" alt="Streak screen: a 23-day streak and the October calendar.">
+      </div>
+    </section>
+
+    <section class="block sage" id="journal">
+      <div class="wrap block-grid flip">
+        <div class="block-text">
+          <h2 class="display">Journal</h2>
+          <p class="lead">Write a note on a quote and it sits on top of that quote on the home screen, like a sticky note. Press and hold to drag it where you want. When the quote comes around again, your note is still there.</p>
+          <p class="lead">All your notes are listed by date in the Journal. You can lock it with Face ID or a PIN.</p>
+        </div>
+        <div class="sheet" aria-hidden="true">
+          <p class="sheet-quote">You must have chaos within you to give birth to a dancing star.</p>
+          <p class="sheet-author">Friedrich Nietzsche</p>
+          <div class="sticky">I'm learning to see the chaos within me not as a flaw, but as a beginning.<span class="sticky-date">31 May</span></div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-brand">P H İ J O</div>
-      <nav class="footer-nav">
-        <a href="privacy-en.html">Privacy Policy</a>
+    <section class="block plum" id="types">
+      <div class="wrap types-grid">
+        <div>
+          <h2 class="display">Eight types</h2>
+          <p class="lead">When you first open the app it asks eight questions and places you in one of eight philosophical types. Your "for you" quotes start from there, then change with what you like.</p>
+          <div class="glyphs" role="group" aria-label="Philosophical types">
+            <button class="glyph" type="button" aria-pressed="true" aria-label="Stoic Sage" data-name="Stoic Sage" data-desc="Holds wisdom, virtue, and patience above the pull of external things.">❂&#xFE0E;</button>
+            <button class="glyph" type="button" aria-pressed="false" aria-label="Existentialist" data-name="Existentialist" data-desc="Questions meaning, freedom, and the solitude of being human.">◌&#xFE0E;</button>
+            <button class="glyph" type="button" aria-pressed="false" aria-label="Romantic" data-name="Romantic" data-desc="Reflects on love and the passing of time; keeps the heart at the center.">❦&#xFE0E;</button>
+            <button class="glyph" type="button" aria-pressed="false" aria-label="Brave Soul" data-name="Brave Soul" data-desc="Sees courage and freedom as the essence of life; ready to take risk.">▲&#xFE0E;</button>
+            <button class="glyph" type="button" aria-pressed="false" aria-label="Contemplative" data-name="Contemplative" data-desc="Quietly meditates on solitude, mortality, and wisdom; seeks inner stillness.">☽&#xFE0E;</button>
+            <button class="glyph" type="button" aria-pressed="false" aria-label="Mystic" data-name="Mystic" data-desc="Believes in a universal connection through love, meaning, and wisdom.">✶&#xFE0E;</button>
+            <button class="glyph" type="button" aria-pressed="false" aria-label="Pragmatist" data-name="Pragmatist" data-desc="Turns patience, courage, and time into action; constructive and resilient.">▣&#xFE0E;</button>
+            <button class="glyph" type="button" aria-pressed="false" aria-label="Lyrical Thinker" data-name="Lyrical Thinker" data-desc="Watches the poetic dance of love, death, and time; sees life as an aesthetic whole.">❧&#xFE0E;</button>
+          </div>
+          <div class="type-panel" id="typePanel">
+            <h3 class="type-name" id="typeName">Stoic Sage</h3>
+            <p class="type-desc" id="typeDesc">Holds wisdom, virtue, and patience above the pull of external things.</p>
+          </div>
+        </div>
+        <span class="type-big" id="typeBig" aria-hidden="true">❂&#xFE0E;</span>
+      </div>
+    </section>
+
+    <section class="block charcoal" id="sources">
+      <div class="wrap sources">
+        <h2 class="display">The original</h2>
+        <p class="lead">The quotes are picked by hand, and we try to leave out the unsourced ones that get passed around online. As of October 2026 there are 287, and 226 of them come with the text in the language it was written in.</p>
+        <ul class="spec">
+          <li>
+            <p class="spec-orig" lang="la">Non exiguum temporis habemus, sed multum perdidimus.</p>
+            <div class="spec-meta">
+              <p class="spec-trans">It is not that we have a short time to live, but that we waste a lot of it.</p>
+              <p class="spec-ref">Seneca, De Brevitate Vitae 1.3</p>
+            </div>
+          </li>
+          <li>
+            <p class="spec-orig" lang="el">Περιγράψας ἑαυτὸν τῷ παρόντι</p>
+            <div class="spec-meta">
+              <p class="spec-trans">Confine yourself to the present.</p>
+              <p class="spec-ref">Marcus Aurelius, Meditations VII.29</p>
+            </div>
+          </li>
+          <li>
+            <p class="spec-orig" lang="de">Habe Mut, dich deines eigenen Verstandes zu bedienen!</p>
+            <div class="spec-meta">
+              <p class="spec-trans">Have the courage to use your own understanding!</p>
+              <p class="spec-ref">Immanuel Kant, Was ist Aufklärung? (1784)</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="wrap paper-section" id="authors">
+      <h2 class="display">49 authors</h2>
+      <ul class="authors"><li>Albert Camus</li> <li>Alfred, Lord Tennyson</li> <li>Aristotle</li> <li>Arthur Schopenhauer</li> <li>Blaise Pascal</li> <li>Carl Gustav Jung</li> <li>Cicero</li> <li>Confucius</li> <li>Dante Alighieri</li> <li>Emily Dickinson</li> <li>Epictetus</li> <li>Epicurus</li> <li>Friedrich Nietzsche</li> <li>Fyodor Dostoyevsky</li> <li>George Eliot</li> <li>Henry David Thoreau</li> <li>Heraclitus</li> <li>Horace</li> <li>Immanuel Kant</li> <li>Johann Wolfgang von Goethe</li> <li>Julius Caesar</li> <li>Kahlil Gibran</li> <li>La Rochefoucauld</li> <li>Leo Tolstoy</li> <li>Marcus Aurelius</li> <li>Michel de Montaigne</li> <li>Mustafa Kemal Atatürk</li> <li>Oscar Wilde</li> <li>Ovid</li> <li>Plato</li> <li>Publilius Syrus</li> <li>Rabindranath Tagore</li> <li>Rainer Maria Rilke</li> <li>Ralph Waldo Emerson</li> <li>Rumi</li> <li>Saadi Shirazi</li> <li>Seneca</li> <li>Sophocles</li> <li>Søren Kierkegaard</li> <li>St. Augustine</li> <li>Sun Tzu</li> <li>Victor Hugo</li> <li>Viktor Frankl</li> <li>Virgil</li> <li>Voltaire</li> <li>Walt Whitman</li> <li>William Blake</li> <li>William Shakespeare</li> <li>Yunus Emre</li></ul>
+    </section>
+
+    <section class="wrap plans-section" id="pricing">
+      <div class="plans">
+        <div class="plan">
+          <h3>Free</h3>
+          <ul>
+            <li>The daily quote</li>
+            <li>1 quote a day picked for you</li>
+            <li>10 feed quotes a day</li>
+            <li>Home and lock screen widgets</li>
+            <li>Streak and streak board</li>
+            <li>Journal and journal lock</li>
+            <li>Favorites, following authors and themes</li>
+            <li>Quotes from the last 3 days</li>
+          </ul>
+        </div>
+        <div class="plan plan-premium">
+          <h3>Premium</h3>
+          <ul>
+            <li>Unlimited feed</li>
+            <li>3 quotes a day picked for you, deep profile analysis</li>
+            <li>Quotes from the last 30 days</li>
+            <li>Your own quotes</li>
+            <li>Personal recap, journal export</li>
+            <li>All fonts and sizes</li>
+            <li>Widget styles and your own text</li>
+            <li>Share styles, app icons</li>
+            <li>3 notification times a day</li>
+          </ul>
+        </div>
+      </div>
+      <p class="plans-note">Premium is a yearly subscription (with a 7-day free trial) or a one-time lifetime purchase. There are no ads in either version.</p>
+    </section>
+
+    <section class="block slate" id="contact">
+      <div class="wrap contact-grid">
+        <div>
+          <h2 class="display">Write to us</h2>
+          <p class="lead">For bugs, ideas or an attribution you think is wrong, write straight here. PhiJo is made in Turkey by Alperen Kara.</p>
+          <div class="contact-actions">
+            <a class="contact-btn contact-btn-primary" href="mailto:phijo.app@gmail.com?subject=PhiJo">Send an email</a>
+            <button class="contact-btn" type="button" id="copyMail" data-mail="phijo.app@gmail.com" data-done="Copied">Copy address</button>
+          </div>
+        </div>
+        <div class="envelope" id="envelope">
+          <div class="env-back"></div>
+          <div class="env-flap" aria-hidden="true">
+            <div class="env-flap-shape"></div>
+            <span class="env-seal">⁂</span>
+          </div>
+          <div class="letter">
+            <img class="stamp" src="assets/icon.webp" width="240" height="240" loading="lazy" alt="">
+            <p class="letter-hello">Dear PhiJo,</p>
+            <a class="letter-mail" href="mailto:phijo.app@gmail.com?subject=PhiJo">phijo.app@gmail.com</a>
+          </div>
+          <div class="env-front"></div>
+          <div class="env-bottom"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block teal" id="download">
+      <div class="wrap closing">
+        <div class="icons" aria-hidden="true">
+          <img src="assets/icon.webp" width="240" height="240" loading="lazy" alt="">
+          <img src="assets/icon-dark.webp" width="240" height="240" loading="lazy" alt="">
+          <img src="assets/icon-sepia.webp" width="240" height="240" loading="lazy" alt="">
+          <img src="assets/icon-ink.webp" width="240" height="240" loading="lazy" alt="">
+        </div>
+        <h2 class="display">Get PhiJo</h2>
+        <a class="badge" href="https://apps.apple.com/app/id6774734669"><img src="assets/app-store-badge.svg" width="165" height="55" alt="Download on the App Store"></a>
+        <p class="fine">iOS 15.1 or later. English and Turkish. No account needed; link an email, Apple or Google account if you want to move your notes to another device. The Android version is in testing and not on Google Play yet.</p>      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <nav class="foot-nav" aria-label="Site">
+        <a href="privacy-en.html">Privacy</a>
+        <a href="terms-en.html">Terms</a>
         <a href="support-en.html">Support</a>
-        <a href="index.html">Türkçe</a>
+        <a href="delete-account-en.html">Delete Account</a>
+        <a href="https://www.instagram.com/phijoapp/" rel="noopener">Instagram</a>
       </nav>
-      <p class="footer-meta">
-        Developer: Alperen Kara · Turkey<br>
-        Contact: <span class="email">phijo.app@gmail.com</span>
-      </p>
-      <p class="footer-copy">&copy; 2026 PhiJo</p>
+      <p class="foot-copy">&copy; 2026 PhiJo</p>
     </div>
   </footer>
 
-  <script>
-    // Scroll reveal — IntersectionObserver
-    (function () {
-      var els = document.querySelectorAll('.reveal');
-      if (!('IntersectionObserver' in window)) {
-        els.forEach(function (el) { el.classList.add('in'); });
-        return;
-      }
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) {
-          if (e.isIntersecting) {
-            e.target.classList.add('in');
-            io.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
-      els.forEach(function (el) { io.observe(el); });
-    })();
-
-    // Rotating featured quote
-    (function () {
-      var quotes = [
-        { text: '“It is not that we have a short time to live, but that we waste much of it.”', attr: '— Seneca · De Brevitate Vitae' },
-        { text: '“A man\'s character is his fate.”', attr: '— Heraclitus · Fr. DK B119' },
-        { text: '“Of all the things wisdom provides for a happy life, the greatest is friendship.”', attr: '— Epicurus · Vatican Sayings' },
-        { text: '“The wound is the place where the Light enters you.”', attr: '— Rumi' }
-      ];
-      var idx = 0;
-      var textEl = document.getElementById('quoteText');
-      var attrEl = document.getElementById('quoteAttr');
-      var cardEl = document.getElementById('quoteCard');
-      var dotsEl = document.getElementById('quoteDots');
-      if (!textEl || !attrEl || !cardEl || !dotsEl) return;
-
-      function renderDots() {
-        dotsEl.innerHTML = '';
-        for (var i = 0; i < quotes.length; i++) {
-          var d = document.createElement('button');
-          d.className = 'quote-dot' + (i === idx ? ' active' : '');
-          d.setAttribute('role', 'tab');
-          d.setAttribute('aria-label', 'Quote ' + (i + 1));
-          (function (target) {
-            d.addEventListener('click', function () { show(target); });
-          })(i);
-          dotsEl.appendChild(d);
-        }
-      }
-      function show(i) {
-        idx = (i + quotes.length) % quotes.length;
-        cardEl.classList.remove('fade-in');
-        void cardEl.offsetWidth;
-        textEl.textContent = quotes[idx].text;
-        attrEl.textContent = quotes[idx].attr;
-        cardEl.classList.add('fade-in');
-        renderDots();
-      }
-      renderDots();
-      setInterval(function () { show(idx + 1); }, 6500);
-    })();
-  </script>
+  <script src="home.js" defer></script>
 </body>
 </html>
