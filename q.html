@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PhiJo</title>
+  <meta name="description" content="PhiJo'dan bir söz.">
+  <meta name="robots" content="noindex">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#F5EFE3" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1A1715" media="(prefers-color-scheme: dark)">
+  <script>
+    // Safari's Smart App Banner reads this tag while parsing, so it is written
+    // here rather than later. With the app installed the banner says "Open" and
+    // hands app-argument to the app, which routes phijo://quote/<id>.
+    (function () {
+      var m = /[?&]id=([0-9a-fA-F-]{36})(?:&|$)/.exec(location.search);
+      var arg = m ? ' app-argument=phijo://quote/' + m[1].toLowerCase() + '?from=link' : '';
+      document.write('<meta name="apple-itunes-app" content="app-id=6774734669' + arg + '">');
+    })();
+    document.documentElement.classList.add('js');
+  </script>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="PhiJo'dan bir söz">
+  <meta property="og:description" content="Her gün tek bir söz gösteren ücretsiz iPhone uygulaması.">
+  <meta property="og:image" content="https://alperenkra.github.io/phijo-web/assets/og-tr.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="home.css">
+  <style>
+    .open-app {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 1.6rem;
+      border-radius: 999px;
+      background: var(--ink);
+      color: var(--paper);
+      font: inherit;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      transition: transform 0.25s ease;
+    }
+    .open-app:hover { transform: translateY(-2px); }
+    .open-app[hidden] { display: none; }
+    .no-app { font-size: 0.95rem; color: var(--muted); }
+    .today { min-height: 80svh; }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <span></span>
+    <div class="masthead">
+      <a href="./" style="text-decoration:none;color:inherit"><p class="brand" aria-label="PhiJo">PHIJO</p></a>
+    </div>
+    <span></span>
+  </header>
+
+  <main>
+    <section class="today">
+      <figure class="today-figure" id="figure" data-state="pending">
+        <p class="today-label" id="label">Bir söz</p>
+        <span class="mark" aria-hidden="true">”</span>
+        <blockquote class="today-quote is-long" id="quote"></blockquote>
+        <figcaption>
+          <p class="today-cite"><span id="author"></span><span class="today-source" id="source"></span></p>
+          <div class="original" id="original" hidden>
+            <p class="original-text" id="originalText"></p>
+            <p class="original-lang" id="originalLang"></p>
+          </div>
+        </figcaption>
+      </figure>
+      <div class="today-foot">
+        <a class="open-app" id="openApp" hidden>Uygulamada aç</a>
+        <p class="lede" id="lede">PhiJo her gün tek bir söz gösteren ücretsiz bir iPhone uygulaması.</p>
+        <a class="badge" id="badge" href="https://apps.apple.com/tr/app/id6774734669"><img src="assets/app-store-badge.svg" width="165" height="55" alt="App Store'dan indir"></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <nav class="foot-nav" aria-label="Site">
+        <a href="./" id="homeLink">PhiJo</a>
+        <a href="privacy.html" id="privacyLink">Gizlilik</a>
+        <a href="https://www.instagram.com/phijoapp/" rel="noopener">Instagram</a>
+      </nav>
+      <p class="foot-copy">&copy; 2026 PhiJo</p>
+    </div>
+  </footer>
+
+  <script src="q.js" defer></script>
+</body>
+</html>
